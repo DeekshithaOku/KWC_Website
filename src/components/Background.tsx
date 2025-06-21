@@ -5,6 +5,7 @@ import TopLeftCloud from "../assets/cloud 1.png";
 import RightLeftCloud from "../assets/cloud 2.png";
 import Cloud2 from "../assets/cloud 4.png";
 import TopCloud from "../assets/cloud 5.png";
+import Rocket from "../assets/rocket.png"
 
 export const Background = () => {
   return (
@@ -16,10 +17,17 @@ export const Background = () => {
             className="absolute top-[0%] left-[0%] lg:w-[20%] w-[40%] max-w-[500px] pointer-events-none select-none"
         />
 
+
          <img
             src={RightLeftCloud}
             alt="Top Left Cloud"
             className="absolute top-[0%] right-[0%] lg:w-[20%] w-[40%] max-w-[500px] pointer-events-none select-none"
+        />
+
+        <img
+            src={Rocket}
+            alt="Rocket"
+            className="absolute top-[8%] md:-right-[8%] lg:-right-[5%] -right-[8%] lg:w-[20%] w-[35%] max-w-[500px] pointer-events-none select-none"
         />
 
         <img
