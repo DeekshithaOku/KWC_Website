@@ -1,2 +1,24 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.paper-lines {
+  background-image:
+    linear-gradient(to right, transparent 7.5%, #ff6b6b 7.5%, #ff6b6b 7.7%, transparent 7.7%),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 24px,
+      #88caff 24px,
+      #88caff 26px
+    );
+  background-size:
+    100% 100%,   
+    100% 27px;   
+  background-position:
+    left top,    
+    0px 48px;    
+  background-repeat:
+    no-repeat,  
+    repeat;      
+}
+

@@ -1,10 +1,15 @@
 import { Background } from "../components/Background";
+import { NotebookPaper } from "../components/Notebook";
+import { Navbar } from "../components/Navbar";
 
 export const Home = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#74B9E5] to-[#80CFEB]">
+    <div className="relative z-10 w-full h-screen ">
       <Background />
-      {/* Your content here if needed */}
+      <Navbar/>
+      <NotebookPaper> 
+        <div className="h-[700px]"></div>
+      </NotebookPaper>
     </div>
   );
 };

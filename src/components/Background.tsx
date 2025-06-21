@@ -9,25 +9,25 @@ import Rocket from "../assets/rocket.png"
 
 export const Background = () => {
   return (
-    <div className="relative w-full min-w-[375px] min-h-[500px] h-screen overflow-hidden">
+    <div className="fixed w-full min-w-[375px] min-h-[500px] h-screen overflow-hidden bg-gradient-to-b from-[#74B9E5] to-[#80CFEB]">
 
         <img
             src={TopLeftCloud}
             alt="Top Left Cloud"
-            className="absolute top-[0%] left-[0%] lg:w-[20%] w-[40%] max-w-[500px] pointer-events-none select-none"
+            className="absolute top-[0%] left-[0%] lg:w-[20%] w-[40%] max-w-[300px] pointer-events-none select-none"
         />
 
 
          <img
             src={RightLeftCloud}
             alt="Top Left Cloud"
-            className="absolute top-[0%] right-[0%] lg:w-[20%] w-[40%] max-w-[500px] pointer-events-none select-none"
+            className="absolute top-[0%] right-[0%] lg:w-[20%] w-[40%] max-w-[300px] pointer-events-none select-none"
         />
 
         <img
             src={Rocket}
             alt="Rocket"
-            className="absolute top-[8%] md:-right-[8%] lg:-right-[5%] -right-[8%] lg:w-[20%] w-[35%] max-w-[500px] pointer-events-none select-none"
+            className="absolute top-[8%] md:-right-[10%] lg:-right-[5%] -right-[10%] lg:w-[20%] w-[35%] max-w-[300px] pointer-events-none select-none"
         />
 
         <img
