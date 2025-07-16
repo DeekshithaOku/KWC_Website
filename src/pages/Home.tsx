@@ -1,6 +1,7 @@
 import { Background } from "../components/Background";
 import { NotebookPaper } from "../components/Notebook";
 import { Navbar } from "../components/Navbar";
+import { AnimatedIntro } from "../components/AnimatedIntro";
 
 export const Home = () => {
   return (
@@ -8,7 +9,7 @@ export const Home = () => {
       <Background />
       <Navbar/>
       <NotebookPaper> 
-        <div className="h-[700px]"></div>
+        <AnimatedIntro />
       </NotebookPaper>
     </div>
   );
