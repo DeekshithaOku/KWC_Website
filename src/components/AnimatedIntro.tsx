@@ -11,7 +11,7 @@ export const AnimatedIntro = () => {
   return (
     <div className="relative w-full flex justify-center items-start px-4 pt-4">
       <motion.div
-        className="relative w-full max-w-6xl h-[545px] md:h-[700px] xl:h-[500px]"
+        className="relative w-full max-w-6xl h-[618px] md:h-[700px] xl:h-[500px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -57,13 +57,13 @@ export const AnimatedIntro = () => {
             JOIN US!
           </p>
           <div className="flex gap-4 mt-1">
-            <div className="bg-white rounded-full p-2 shadow">
+            <div className="bg-black rounded-full p-2 shadow">
               <FaInstagram size={30} color="#E1306C" />
             </div>
-            <div className="bg-white rounded-full p-2 shadow">
+            <div className="bg-black rounded-full p-2 shadow">
               <SiDiscord size={30} color="#5865F2" />
             </div>
-            <div className="bg-white rounded-full p-2 shadow">
+            <div className="bg-black rounded-full p-2 shadow">
               <SiGmail size={30} color="#EA4335" />
             </div>
           </div>

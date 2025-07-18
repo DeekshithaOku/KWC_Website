@@ -3,24 +3,20 @@ export const NotebookPaper = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <img
-        src="/binder.png"
+        src="/src/assets/binder.png"
         alt="Binder Ring"
-        className="absolute top-[18%] md:top-[17%] lg:top-[15%] left-[25%] md:w-[50px] w-[25px] h-auto z-20"
+        className="absolute top-[18.5%] md:top-[18%] lg:top-[16%] left-[25%] md:w-[50px] w-[25px] h-auto z-20"
       />
       <img
-        src="/binder.png"
+        src="/src/assets/binder.png"
         alt="Binder Ring"
-        className="absolute top-[18%] md:top-[17%] lg:top-[15%] left-[50%] md:w-[50px] w-[25px] h-auto z-20"
+        className="absolute top-[18.5%] md:top-[18%] lg:top-[16%] left-[50%] md:w-[50px] w-[25px] h-auto z-20"
       />
       <img
-        src="/binder.png"
+        src="/src/assets/binder.png"
         alt="Binder Ring"
-        className="absolute top-[18%] md:top-[17%] lg:top-[15%] left-[75%] md:w-[50px] w-[25px] h-auto z-20"
+        className="absolute top-[18.5%] md:top-[18%] lg:top-[16%] left-[75%] md:w-[50px] w-[25px] h-auto z-20"
       />
-
-      <div className="absolute top-[20.1%] left-[25.1%] w-[13px] md:w-[25px] h-[6%] bg-[#fffef9] z-30" />
-      <div className="absolute top-[20.1%] left-[50.1%] w-[13px] md:w-[25px] h-[6%] bg-[#fffef9] z-30" />
-      <div className="absolute top-[20.1%] left-[75.1%] w-[13px] md:w-[25px] h-[6%] bg-[#fffef9] z-30" />
 
       <div
         className="relative z-10 top-[20%] left-1/2 transform -translate-x-1/2 
