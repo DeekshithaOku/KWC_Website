@@ -94,7 +94,7 @@ export const SeasonalGrid = () => {
   };
 
   return (
-    <div className="relative max-w-5xl mx-auto w-full mt-24">
+    <div className="relative max-w-5xl mx-auto w-full top-[20%]">
       <AnimatePresence mode="wait">
         {activeTab === "spring" && (
           <motion.div key="spring">
