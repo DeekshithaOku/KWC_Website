@@ -1,128 +1,131 @@
-import { useState } from "react";
-import flower1 from "../assets/flower1.png";
-import leaf1 from "../assets/leaf1.png";
-import scratchCat from "../assets/scratch.png";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const springSlides = [
-  {
-    title: "Spring Lesson 1",
-    link: "https://docs.google.com/presentation/d/1_pJgY0qjFDN66d3AToUg2e-WziTmFeZXDoSS0_DlXuY/edit?usp=drive_link",
-    previewImg: "/src/assets/previews/spring1.png",
-  },
-  {
-    title: "Spring Lesson 1",
-    link: "https://docs.google.com/presentation/d/1_pJgY0qjFDN66d3AToUg2e-WziTmFeZXDoSS0_DlXuY/edit?usp=drive_link",
-    previewImg: "/src/assets/previews/spring1.png",
-  },
-  {
-    title: "Spring Lesson 1",
-    link: "https://docs.google.com/presentation/d/1_pJgY0qjFDN66d3AToUg2e-WziTmFeZXDoSS0_DlXuY/edit?usp=drive_link",
-    previewImg: "/src/assets/previews/spring1.png",
-  },
-  {
-    title: "Spring Lesson 1",
-    link: "https://docs.google.com/presentation/d/1_pJgY0qjFDN66d3AToUg2e-WziTmFeZXDoSS0_DlXuY/edit?usp=drive_link",
-    previewImg: "/src/assets/previews/spring1.png",
-  },
+interface SlideData {
+  id: string;
+  title: string;
+  slideUrl: string;
+}
+
+const springLessons: SlideData[] = [
+  { id: 'spring-1', title: 'Spring Flowers & Growth', slideUrl: 'https://docs.google.com/presentation/d/1ABC123/edit' },
+  { id: 'spring-2', title: 'Weather Patterns', slideUrl: 'https://docs.google.com/presentation/d/1DEF456/edit' },
+  { id: 'spring-3', title: 'Baby Animals', slideUrl: 'https://docs.google.com/presentation/d/1GHI789/edit' },
+  { id: 'spring-4', title: 'Garden Planning', slideUrl: 'https://docs.google.com/presentation/d/1JKL012/edit' },
+  { id: 'spring-5', title: 'Rain Cycle', slideUrl: 'https://docs.google.com/presentation/d/1MNO345/edit' },
+  { id: 'spring-6', title: 'Spring Activities', slideUrl: 'https://docs.google.com/presentation/d/1PQR678/edit' },
 ];
 
-const fallSlides = [
-  {
-    title: "Fall Lesson A",
-    link: "https://docs.google.com/presentation/d/SLIDE_ID_2",
-    previewImg: "/src/assets/previews/fall1.png",
-  },
-  {
-    title: "Fall Lesson A",
-    link: "https://docs.google.com/presentation/d/SLIDE_ID_2",
-    previewImg: "/src/assets/previews/fall1.png",
-  },
-  {
-    title: "Fall Lesson A",
-    link: "https://docs.google.com/presentation/d/SLIDE_ID_2",
-    previewImg: "/src/assets/previews/fall1.png",
-  },
-  {
-    title: "Fall Lesson A",
-    link: "https://docs.google.com/presentation/d/SLIDE_ID_2",
-    previewImg: "/src/assets/previews/fall1.png",
-  },
-  {
-    title: "Fall Lesson A",
-    link: "https://docs.google.com/presentation/d/SLIDE_ID_2",
-    previewImg: "/src/assets/previews/fall1.png",
-  },
+const fallLessons: SlideData[] = [
+  { id: 'fall-1', title: 'Autumn Leaves', slideUrl: 'https://docs.google.com/presentation/d/1STU901/edit' },
+  { id: 'fall-2', title: 'Harvest Time', slideUrl: 'https://docs.google.com/presentation/d/1VWX234/edit' },
+  { id: 'fall-3', title: 'Migration Patterns', slideUrl: 'https://docs.google.com/presentation/d/1YZA567/edit' },
+  { id: 'fall-4', title: 'Weather Changes', slideUrl: 'https://docs.google.com/presentation/d/1BCD890/edit' },
+  { id: 'fall-5', title: 'Thanksgiving Science', slideUrl: 'https://docs.google.com/presentation/d/1EFG123/edit' },
+  { id: 'fall-6', title: 'Preparing for Winter', slideUrl: 'https://docs.google.com/presentation/d/1HIJ456/edit' },
 ];
 
-export const SeasonGrid = () => {
-  const [season, setSeason] = useState<"spring" | "fall">("spring");
+export const SeasonalGrid = () => {
+  const [activeTab, setActiveTab] = useState<'spring' | 'fall'>('spring');
+  const [cardsVisible, setCardsVisible] = useState(true);
 
-  const slides = season === "spring" ? springSlides : fallSlides;
-  const decorations =
-    season === "spring" ? [flower1, flower1, flower1] : [leaf1, leaf1, leaf1];
+  const currentLessons = activeTab === 'spring' ? springLessons : fallLessons;
+
+  const handleSlideClick = (slideUrl: string) => {
+    window.open(slideUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleTabChange = (tab: 'spring' | 'fall') => {
+    setCardsVisible(false);
+    setActiveTab(tab); 
+
+    setTimeout(() => {
+      setCardsVisible(true); 
+    }, 700); 
+  };
 
   return (
-    <div className="relative w-full max-w-6xl bg-white backdrop-blur-md rounded-lg shadow-xl p-4 min-h-[500px] mt-32">
-      <div className="flex justify-center mb-4">
-        <button
-          onClick={() => setSeason("spring")}
-          className={`px-6 py-2 font-semibold border-r rounded-l-md ${
-            season === "spring"
-              ? "bg-blue-200 text-black"
-              : "bg-gray-100 text-gray-600"
-          }`}
+    <div className="max-w-5xl mx-auto w-full mt-24">
+      {/* Tabs */}
+      <div className="flex relative">
+        <motion.button
+          onClick={() => handleTabChange('spring')}
+          className={`
+            px-12 py-4 font-medium text-lg rounded-t-[18px] transition-all duration-300 relative z-20
+            border border-black text-black font-[Pangolin]
+            ${activeTab === 'spring'
+              ? 'bg-white border-b-transparent'
+              : 'bg-[#f5f5f5] border-b-black'}
+          `}
         >
           Spring
-        </button>
-        <button
-          onClick={() => setSeason("fall")}
-          className={`px-6 py-2 font-semibold rounded-r-md ${
-            season === "fall"
-              ? "bg-yellow-200 text-black"
-              : "bg-gray-100 text-gray-600"
-          }`}
+        </motion.button>
+
+        <motion.button
+          onClick={() => handleTabChange('fall')}
+          className={`
+            px-12 py-4 font-medium text-lg rounded-t-[18px] transition-all duration-300 relative z-20
+            border border-black border-l-0 text-black font-[Pangolin]
+            ${activeTab === 'fall'
+              ? 'bg-white border-b-transparent'
+              : 'bg-[#f5f5f5] border-b-black'}
+          `}
         >
           Fall
-        </button>
+        </motion.button>
+
+        <div className="flex-1 border-b border-black z-10" />
       </div>
 
-      {decorations.map((src, idx) => (
-        <img
-          key={idx}
-          src={src}
-          alt="Decoration"
-          className="absolute w-[40px] h-[40px]"
-          style={{
-            top: `${Math.random() * 80}%`,
-            left: `${Math.random() * 80}%`,
-            pointerEvents: "none",
-          }}
-        />
-      ))}
-
-      <img
-        src={scratchCat}
-        alt="Scratch"
-        className="absolute bottom-2 left-2 w-[60px] pointer-events-none"
-      />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-        {slides.map((slide, i) => (
-          <a
-            key={i}
-            href={slide.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-100 hover:bg-blue-200 transition-all duration-300 rounded-lg overflow-hidden shadow-md"
-          >
-            <img
-              src={slide.previewImg}
-              alt={slide.title}
-              className="w-full h-[150px] object-cover"
-            />
-          </a>
-        ))}
-      </div>
+      <motion.div
+        layout
+        className="bg-white border border-black rounded-b-lg border-t-0 p-6 z-10"
+        transition={{
+          layout: {
+            type: 'tween',
+            duration: 0.7,
+            ease: 'easeInOut',
+          },
+        }}
+      >
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
+          {currentLessons.map((lesson, index) => (
+            <motion.div
+              key={lesson.id + activeTab}
+              layout
+              initial={false}
+              animate={{
+                opacity: cardsVisible ? 1 : 0,
+                y: cardsVisible ? 0 : 50,
+              }}
+              transition={{
+                delay: cardsVisible ? 0.1 + index * 0.05 : 0,
+                duration: 0.45,
+                ease: 'easeOut',
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -8,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleSlideClick(lesson.slideUrl)}
+              className="cursor-pointer"
+            >
+              <div
+                className={`h-46 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg
+                  ${activeTab === 'spring'
+                    ? 'bg-blue-100 hover:bg-blue-200'
+                    : 'bg-orange-100 hover:bg-orange-200'}
+                `}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

@@ -33,7 +33,7 @@ export const TripsNotebook = ({
         transition={{ duration: 0.4 }}
         className="relative z-10 top-[20%] left-1/2 transform -translate-x-1/2 
           w-[260px] md:w-[600px] lg:w-[800px] xl:w-[1000px]
-          rounded-tl-3xl shadow-xl border-[1.5px] overflow-visible min-h-[500px] items-center"
+          rounded-tl-3xl rounded-bl-3xl shadow-xl border-[1.5px] overflow-visible min-h-[500px] items-center"
         style={{
           backgroundColor: `${color}A6`,
           borderColor: color,

@@ -4,8 +4,11 @@ import kid1 from "../assets/kid1.png";
 import kid2 from "../assets/kid2.png";
 import kid3 from "../assets/kid3.png";
 import kid4 from "../assets/kid4.png";
-import { FaInstagram } from "react-icons/fa";
-import { SiGmail, SiDiscord } from "react-icons/si";
+import { Icon } from "@iconify/react";
+import gmailIcon from "@iconify-icons/logos/google-gmail";
+import discordIcon from "@iconify-icons/logos/discord-icon";
+import instagramIcon from "@iconify-icons/logos/instagram-icon";
+
 
 export const AnimatedIntro = () => {
   return (
@@ -57,14 +60,14 @@ export const AnimatedIntro = () => {
             JOIN US!
           </p>
           <div className="flex gap-4 mt-1">
-            <div className="bg-black rounded-full p-2 shadow">
-              <FaInstagram size={30} color="#E1306C" />
+            <div className="rounded-full p-2 shadow-lg">
+              <Icon icon={instagramIcon } width="30" height="30" />
             </div>
-            <div className="bg-black rounded-full p-2 shadow">
-              <SiDiscord size={30} color="#5865F2" />
+            <div className="rounded-full p-2 shadow-lg">
+              <Icon icon={discordIcon} width="30" height="30" />
             </div>
-            <div className="bg-black rounded-full p-2 shadow">
-              <SiGmail size={30} color="#EA4335" />
+            <div className="rounded-full p-2 shadow-lg">
+              <Icon icon={gmailIcon} width="30" height="30" />
             </div>
           </div>
         </motion.div>

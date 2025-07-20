@@ -1,12 +1,20 @@
 import { Plane, BookOpen, Users, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <nav className="absolute top-12 left-1/2 transform -translate-x-1/2 z-40 w-full">
       {/* Large Screen Buttons */}
-      <div className="hidden md:flex justify-center gap-8">
+      <div className="relative hidden md:flex justify-center gap-8">
+        <button
+          onClick={() => navigate("/")}
+          className="hidden md:block fixed top-2 left-24 z-50 bg-[#1234A7] hover:bg-[#43A324] transition-colors duration-300 text-black rounded-full p-2 shadow-md"
+        >
+          <FaHome className="text-xl text-white" />
+      </button>
         <Link to="/trips" className="btn btn-md md:btn-lg rounded-full bg-sky-400 text-white border-none hover:brightness-110">
           Trips
         </Link>
