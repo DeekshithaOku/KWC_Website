@@ -1,15 +1,15 @@
 import { Background } from "../components/Background";
 import { NotebookPaper } from "../components/Notebook";
 import { Navbar } from "../components/Navbar";
+import { AboutPageContent } from "../components/AboutPageContent";
 
 export const About = () => {
   return (
     <div className="relative z-10 w-full h-screen ">
       <Background />
       <Navbar/>
-      <NotebookPaper> 
-        <div>
-        </div>
+        <NotebookPaper>
+        <AboutPageContent />
       </NotebookPaper>
     </div>
   );
