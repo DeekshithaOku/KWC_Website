@@ -4,7 +4,7 @@ To run this siteon you local device, make a folder where you want this project t
 Then go to this folder on you terminal and clone this repo to your laptop using
 
 ```bash
-git clone https://github.com/kwc-site/site_3.git .
+git clone https://github.com/DeekshithaOku/KWC_Website.git .
 ```
 
 After cloning make sure you are in the directory of the project and run
