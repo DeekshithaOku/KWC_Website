@@ -1,14 +1,10 @@
-import { Navbar } from "../components/Navbar";
 import { SeasonalGrid } from "../components/SeasonalGrid";
+import { PageLayout } from "../components/PageLayout";
 
 export const Lessons = () => {
   return (
-    <div className="relative w-full min-h-screen overflow-y-auto">
-      <Navbar />
-
-      <div className="relative h-screen">
-        <SeasonalGrid />
-      </div>
-    </div>
+    <PageLayout>
+      <SeasonalGrid />
+    </PageLayout>
   );
 };

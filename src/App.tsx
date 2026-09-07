@@ -4,22 +4,18 @@ import { Trips } from "./pages/Trips";
 import { Lessons } from "./pages/Lessons";
 import { Eboard } from "./pages/Eboard";
 import { About } from "./pages/About";
-import { Background } from "./components/Background";
 
 function AppContent() {
   const location = useLocation();
 
   return (
-    <>
-      <Background />
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/trips" element={<Trips />} />
-        <Route path="/lessons" element={<Lessons />} />
-        <Route path="/eboard" element={<Eboard />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </>
+    <Routes location={location} key={location.pathname}>
+      <Route path="/" element={<Home />} />
+      <Route path="/trips" element={<Trips />} />
+      <Route path="/lessons" element={<Lessons />} />
+      <Route path="/eboard" element={<Eboard />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
   );
 }
 

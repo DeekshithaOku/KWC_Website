@@ -1,5 +1,4 @@
-import { NotebookPaper } from "../components/Notebook";
-import { Navbar } from "../components/Navbar";
+import { PageLayout } from "../components/PageLayout";
 import { HangingBoard } from "../components/HangingBoard";
 import { Icon } from "@iconify/react";
 import gmailIcon from "@iconify-icons/logos/google-gmail";
@@ -43,20 +42,17 @@ export const Eboard = () => {
   ];
 
   return (
-    <div className="relative z-10 w-full h-screen">
-      <Navbar />
-      <NotebookPaper>
-        <div className="flex flex-col items-center space-y-20 pt-24">
-          {boardData.map((board, idx) => (
-            <HangingBoard
-              key={idx}
-              boardType={board.boardType}
-              icons={board.icons}
-              index={idx}
-            />
-          ))}
-        </div>
-      </NotebookPaper>
-    </div>
+    <PageLayout>
+      <div className="flex flex-col items-center space-y-20 pt-24">
+        {boardData.map((board, idx) => (
+          <HangingBoard
+            key={idx}
+            boardType={board.boardType}
+            icons={board.icons}
+            index={idx}
+          />
+        ))}
+      </div>
+    </PageLayout>
   );
 };

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Navbar } from "../components/Navbar";
 import { TripsNotebook } from "../components/TripsNotebook";
 import { TripsTabs } from "../components/TripsTabs";
 import { CalendarTab } from "../components/Calender";
 import { SignUp } from "../components/Signup";
 import { Attendance } from "../components/Attendence";
 import { ServiceHours } from "../components/ServiceHours";
+import { PageLayout } from "../components/PageLayout";
 
 const tabComponents: any = {
   Calendar: <CalendarTab />,
@@ -25,12 +25,11 @@ export const Trips = () => {
   const [activeTab, setActiveTab] = useState("Calendar");
 
   return (
-    <div className="relative w-full h-screen">
-      <Navbar />
+    <PageLayout>
       <TripsNotebook color={tabColors[activeTab]}>
         <TripsTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         {tabComponents[activeTab]}
       </TripsNotebook>
-    </div>
+    </PageLayout>
   );
 };
